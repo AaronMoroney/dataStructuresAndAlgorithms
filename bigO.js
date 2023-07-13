@@ -81,4 +81,4 @@ function upAndDown(n) {
 
 console.log(upAndDown(10));
 
-//counting the big0
+//counting the big-O
