@@ -12,7 +12,7 @@ let arr1 = [1,2,3,4,5];
 //assign the map + it's function to a variable
 let mappedArr = arr1.map(function(value) {
   return value * 10
-});
+}); //[10,20,30,40,50]
 
 console.log(mappedArr);
 

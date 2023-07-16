@@ -10,7 +10,7 @@ let instructor = {
 console.log(instructor); //
 console.log(Object.keys(instructor)); //O(n)
 console.log(Object.entries(instructor)); //O(n)
-console.log(instructor.hasOwnProperty('name')); //0(1)
+console.log(instructor.hasOwnProperty('name')); //0(1) 
 
 
 //15. big-O of objs?

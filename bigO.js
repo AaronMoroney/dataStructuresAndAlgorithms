@@ -2,7 +2,7 @@
 
 //loop approach - 0(n)
 function addUpTo(n) {
-    let total=0;
+    let total = 0;
     for (let i = 0; i <= n; i++) {
         total += i;
     }
@@ -60,12 +60,12 @@ console.log(`time elapsed 2: ${(t4 -t3) / 1000} seconds.`);
 */
 
 /*
-
+    * O(n) *
     f(n) could be linear (f(n) = n)
     -- as the input increases, runtime scales
                 -------
                 |    /|
-    time       |  /  | 
+    time        |  /  | 
                 |/    |
                 -------
                 input
@@ -74,9 +74,11 @@ console.log(`time elapsed 2: ${(t4 -t3) / 1000} seconds.`);
     --as input increases, the runtime of the algo increase by the square of 
     the input size
 
+    * O(n^2) *
+
                 -------
                 |   | |
-    time       |  /  | 
+    time        |  /  | 
                 |/    |
                 -------
                 input
@@ -84,9 +86,11 @@ console.log(`time elapsed 2: ${(t4 -t3) / 1000} seconds.`);
     f(n) could be constant (f(n)=1)
     --runtime remains constant to input size
 
+    * O(1) *
+
                 -------
                 |     |
-    time       |_____| 
+    time        |_____| 
                 |     |
                 -------
                 input
@@ -111,9 +115,9 @@ console.log(upAndDown(10));
 /*
     //big-O shorthands 
 
-    1. arithmithic operations are constant 
-    2. variable assignment is constant
-    3. accessing elements in an array (by index) or object (by key) is constant
+    1. arithmithic operations are constant O(1)
+    2. variable assignment is constant O(1)
+    3. accessing elements in an array (by index) or object (by key) is constant O(1)
     4. in a loop 
     -- the complexity of the lenght(n) of the loop 
     -- x --
@@ -125,9 +129,9 @@ console.log(upAndDown(10));
 /*
     //space complexities in JS
 
-    -- most primitives (booleans, numbers, undefined, null) are constant space
-    -- strings require O(n) space, (where n is the string length)
-    -- reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects)
+    -- most primitives (booleans, numbers, undefined, null) are constant space O(n)
+    -- strings require O(n) space, (where n is the string length) O(n)
+    -- reference types are generally O(n), where n is the length (for arrays) or the number of keys (for objects) O(n)
 */
 
 function sum(arr) {

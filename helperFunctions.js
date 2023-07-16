@@ -10,10 +10,10 @@
 
 var array1 = [1,2,3,4,5];
 let exampleSlice = array1.slice(1,2);
-console.log('exampleSlice1', exampleSlice); // returns [2], var array1 = [1,2,3,4,5];
+console.log('exampleSlice1', exampleSlice); // returns [2], var array1 remains = [1,2,3,4,5];
 
 let exampleSlice2 = array1.slice(3,4);
-console.log('exampleSlice2', exampleSlice2);
+console.log('exampleSlice2', exampleSlice2); //returns [4]
 
 console.log(array1); //not modified
 
@@ -33,7 +33,7 @@ console.log('newerArr', newerArr);
 
 newerArr[0] = 6;
 
-console.log('newArrReassigned', newerArr);
+console.log('newArrReassigned', newerArr); //will remain the same 
 
 /* | Array.from
 ** to create an entirely new array not stored in reference, use array.from
