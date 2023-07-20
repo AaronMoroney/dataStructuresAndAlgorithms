@@ -1,5 +1,3 @@
-//https://www.hackerrank.com/challenges/one-week-preparation-kit-plus-minus/problem
-
 /*
 Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
 
@@ -17,28 +15,55 @@ Function Description
 Complete the plusMinus function in the editor below.
 
 plusMinus has the following parameter(s):
-
 int arr[n]: an array of integers
+
+Input Format
+
+The first line contains an integer, , the size of the array.
+The second line contains  space-separated integers that describe .
+
+Constraints
+
+
+Output Format
+
+Print the following  lines, each to  decimals:
+
+proportion of positive values
+proportion of negative values
+proportion of zeros
+Sample Input
+
+STDIN           Function
+-----           --------
+6               arr[] size n = 6
+-4 3 -9 0 4 1   arr = [-4, 3, -9, 0, 4, 1]
+Sample Output
+
+0.500000
+0.333333
+0.166667
 */
 
 //solution
+
 function plusMinus(arr) {
     let negative=[];
     let positive=[];
     let equalToZero=[];
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === 0) {
-            equalToZero.push(arr[i]);
-        }
-        if (arr[i] > 0) {
-            positive.push(arr[i]);
-        }
-        if(arr[i] < 0) {
-            negative.push(arr[i]);
-        }
+      if (arr[i] === 0) {
+        equalToZero.push(arr[i]);
+      }
+      if (arr[i] > 0) {
+        positive.push(arr[i]);
+      }
+      if(arr[i] < 0) {
+        negative.push(arr[i]);
     }
-    console.log(positive.length / arr.length);
-    console.log(negative.length / arr.length);
-    console.log(equalToZero.length / arr.length);
+}
+console.log(positive.length / arr.length);
+console.log(negative.length / arr.length);
+console.log(equalToZero.length / arr.length);
 }
 
