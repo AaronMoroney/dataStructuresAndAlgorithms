@@ -41,3 +41,4 @@ function plusMinus(arr) {
     console.log(negative.length / arr.length);
     console.log(equalToZero.length / arr.length);
 }
+
