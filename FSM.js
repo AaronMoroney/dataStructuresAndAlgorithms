@@ -5,6 +5,9 @@
 
     the actions your application is in determines the actions that it takes 
     therefore creating a more predictable & less error prone programme
+
+    A state machine is a machine - that can be in one of a finite number of states at a given time 
+    - the transitions between the states happen in a deterministic way
 */
 
 //xState - finite state machine react -- in the APP component

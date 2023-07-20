@@ -45,7 +45,7 @@
     --1. Start w/ simple examples
     --2. Progress to more complex examples
     --3. Explore examples w/ empty inputs
-    --4. Explore examples w/ imnvalid inputs 
+    --4. Explore examples w/ invalid inputs 
 
     does our code need to contain a count of charecotrs not present?
     what about other charectors, whitespaces, casing?
