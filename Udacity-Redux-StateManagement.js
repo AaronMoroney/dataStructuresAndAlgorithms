@@ -89,7 +89,7 @@
     https://learn.udacity.com/nanodegrees/nd019/parts/cd0547/lessons/6910ca63-041d-4b8e-9c05-a23dbea80908/concepts/21cf65b2-6f44-4b5d-a057-6e4d065cbc00
    
 */
-
+//library code
 function createStore () {
     //--1. the state tree
     //--2. a way to get the state tree (API or etc)
@@ -109,6 +109,12 @@ function createStore () {
         return () => {
             listeners = listeners.filter((l) =>  l !== listener)
         }
+    }
+
+    const dispatch = (action) => {
+        state = todos(state, action)
+        //loop through listeners & invoke
+        listeners.forEach((listener) => listener());
     }
     return { //obj - whenever create getStore is invoked
         getState,
@@ -217,8 +223,26 @@ const unsubscribe = store.subscribe(() => { //listener
     https://learn.udacity.com/nanodegrees/nd019/parts/cd0547/lessons/6910ca63-041d-4b8e-9c05-a23dbea80908/concepts/90993600-5339-474e-9799-7f2322599f9f
 
     Redux is a predictable state container for JavaScript Apps
-
     -- entire state of the application
 
+    rule #2 - pure functions 
+    ==============
+    what is a pure function?
 
+    --1. Return the same result if the same arguments are passed in
+    --2. Depend solely on the arguments passed into them
+    --3. Do not produce side effects, such as API requests and I/O operations
 */
+
+//state = [], bypasses the fact on first call state will be undefined
+//reducer function, must be pure fn.
+
+//app code
+function todos (state = [], action) {
+    if(action.type === 'ADD_TODO') {
+        return state.concat([action.todo])
+    }
+    return state
+}
+
+
