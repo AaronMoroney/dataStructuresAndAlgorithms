@@ -1,5 +1,7 @@
 let number = 15;
-//console.log(array);
+
+
+//https://www.hackerrank.com/challenges/fizzbuzz/problem?h_r=internal-search
 
 function fizzBuzz(n) {
   for (let i = 1; i <= n; i++) {

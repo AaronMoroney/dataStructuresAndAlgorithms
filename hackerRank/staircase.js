@@ -1,3 +1,4 @@
+//https://www.hackerrank.com/challenges/staircase/problem?isFullScreen=true
 function printStaircase(size) {
     for (let i = 1; i <= size; i++) {
         const spaces = ' '.repeat(size - i);

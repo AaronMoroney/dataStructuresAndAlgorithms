@@ -1,3 +1,4 @@
+//https://www.hackerrank.com/challenges/time-conversion/problem?isFullScreen=true
 function timeConversion(s) {
     let hour = Number(s.substring(0,2));
     let minutesSeconds = s.substring(2, s.length -2);

@@ -1,16 +1,5 @@
-/*
-sample input: 9 10 5 20 20 4 5 2 25 1
-The first line contains an integer , the number of games.
-The second line contains  space-separated integers describing the respective 
-values of the scores.
+//https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem?h_r=internal-search
 
-sample output:
-2 4
-
-She broke her best record twice (after games 2 and 7) and her worst record
-four times (after games 1, 4, 6, and 8 ), 
-so we print 2 4 as our answer. 
-*/
 
 function breakingRecords(scores) {
     let highestScore = scores[0];
