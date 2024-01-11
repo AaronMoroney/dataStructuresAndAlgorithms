@@ -155,3 +155,4 @@ function doubleArr(array) {
 }
 
 console.log(doubleArr(arr));
+

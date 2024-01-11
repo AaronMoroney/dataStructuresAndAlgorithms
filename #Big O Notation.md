@@ -30,6 +30,7 @@ function exampleLinear(n) {
     }
 }
 ```
+
 ### Common Examples - O(n2) - quadratic
 
 - nested loop
@@ -45,6 +46,7 @@ function exampleQuadratic(n) {
     }
 }
 ```
+
 ### Common Examples - O(n3) - cubic
 
 ```javascript
@@ -59,6 +61,7 @@ function exampleQuadratic(n) {
         }
     }
 }
+
 ```
 ### Common Examples - O(log n) - logarithmic
 
@@ -73,7 +76,6 @@ function exmapleLogarithmic(n) {
     }
 }
 ```
-
 ## Rules of Big-O Notation
 
 - Represent an alogrithm's complexity as f(n)
@@ -133,3 +135,25 @@ function a(n) {
 - there is +1 operation from the last(count +=3)
 - this still has a Big-O notation of O(n) - the one operation is not dependant on the input, (n)
 - as (n) approaches infinity, it will become neglible.
+
+### sum rule - add big-O's up
+
+- the sum rule is easy to understand, time complexities can be added. 
+- the big-O of a master algo, that requires two other algos, is simlpy the two others added.
+
+```javascript
+function a(n){
+    var count = 0;
+    for (var i = 0; i<n; i++) {
+        count +=1;
+    }
+    for (var i = 0; j < 5*n; i++) {
+        count +=1;
+    }
+    return count
+}
+```
+- in this example: line 4 has f(n) = n
+- in this example: line 7 has f(n) = 5n
+- this results in f(n) = 6n
+- when applying the coefficient rule, the final result is O(n) = n
