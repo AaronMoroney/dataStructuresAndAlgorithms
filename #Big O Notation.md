@@ -25,7 +25,7 @@ the Big-0 notation measures the worse-case complexity of an algorithim
 
 ```javascript
 function exampleLinear(n) {
-    for (var i = 0; - < n; i++) {
+    for (var i = 0; i < n; i++) {
         console.log(i);
     }
 }
