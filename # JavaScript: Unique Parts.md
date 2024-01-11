@@ -104,3 +104,50 @@ scope3(true) //error
 ```
 
 - in this example, nothing is printed, or in my case: resolved with an error because the console.log is outside the block
+
+### Equality and Types
+
+- javascript has different types than a traditonal programming langauge like java
+
+## variable types
+
+-**There are seven primitive data types:**
+
+1. boolean
+2. number 
+-- note: all numeric values are represented by the number type. This includes integers, floating-point numbers, and even special values like Infinity and NaN (Not-a-Number).
+3. string
+4. undefined
+5. object
+6. function
+7. symbol
+
+-a primitive type in programming refers to the most basic data types provided by a language.
+
+- undefined is a primitive value, that is assigned to a variable that has just been declared
+
+```javascript
+let is20 = false;
+typeof is20; //boolean
+
+let age = 29;
+typeof age; //number 
+
+let lastName = 'moroney'
+typeof lastName; //string
+
+let bikes =['road', 'gravel', 'mtb'];
+typeof bikes; //object
+
+let me = {firstName: 'aaron', lastName: 'moroney'}
+typeof me; //object
+
+let nullVar = null;
+typeof nullVar; //object
+
+let nothing;
+typeof nothing; //undefined
+```
+
+## truthy / falsy checks
+
