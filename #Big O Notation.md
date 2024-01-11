@@ -55,7 +55,7 @@ function exampleQuadratic(n) {
         console.log(i)
         for (var = j; j < n; j++ )  {
             console.log(j);
-            for (var k = j; j < k; j++ ) {
+            for (var k = j; j < n; j++ ) {
                 console.log(k);
             }
         }
