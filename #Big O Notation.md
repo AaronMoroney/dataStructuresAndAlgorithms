@@ -157,3 +157,42 @@ function a(n){
 - in this example: line 7 has f(n) = 5n
 - this results in f(n) = 6n
 - when applying the coefficient rule, the final result is O(n) = n
+
+### Product Rules - Multiply Big-O's
+
+- the product rule simply states how big-O's can be multiplied
+
+```javascript
+function(n) {
+    var count = 0;
+    for(var i = 0; i < n; i++) {
+        count +=1
+        for (var i = 0; i<5*n;i++) {
+            count +=1;
+        }
+    }
+    return count;
+}
+```
+
+- in this example, f(n) = 5n*n because line 7 runs 5n times, foe a total of n iterations
+- the result is the O(n)=n2
+
+### Polynomoinal Rules - 'Big-O to the power of K' 
+
+-The polynominal rule states that polynominal time complexities have big-O notation of the same polynominal degree
+
+-**if f(n) is a polynominal degree of k, then f(n) is O(n to the power of k)**
+
+- quadratic
+
+```javascript
+function a(n) {
+    for (let i = 0; i < n*n; i++) {
+        count += 1;
+    }
+    return count;
+}
+```
+
+- in this example f(n) = n to the power of two, because line 4 runs n*n iterations.
