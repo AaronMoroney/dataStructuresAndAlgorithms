@@ -71,7 +71,7 @@ function exampleCubic(n) {
 
 ```javascript
 function exmapleLogarithmic(n) {
-    for (var i = 2;p - <= n; i = i*2 ) {
+    for (var i = 2;i <= n; i = i*2 ) {
         console.log(i);
     }
 }
