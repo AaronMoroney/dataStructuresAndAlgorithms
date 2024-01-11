@@ -195,4 +195,4 @@ function a(n) {
 }
 ```
 
-- in this example f(n) = n to the power of two, because line 4 runs n*n iterations.
+- in this example f(n) = n^2, because line 4 runs n*n iterations.
