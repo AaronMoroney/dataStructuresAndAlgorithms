@@ -1,4 +1,4 @@
-#Big O Notation
+# Big O Notation
 
 This document provides examples of JavaScript functions to calculate the sum of numbers and illustrates concepts of Big O Notation and space complexity.
 
