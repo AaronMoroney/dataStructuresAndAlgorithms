@@ -50,7 +50,7 @@ function exampleQuadratic(n) {
 ### Common Examples - O(n3) - cubic
 
 ```javascript
-function exampleQuadratic(n) {
+function exampleCubic(n) {
     for (var = i; i < n; i++ )  {
         console.log(i)
         for (var = j; j < n; j++ )  {
