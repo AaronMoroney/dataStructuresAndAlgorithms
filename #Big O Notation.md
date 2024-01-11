@@ -25,7 +25,7 @@ the Big-0 notation measures the worse-case complexity of an algorithim
 
 ```javascript
 function exampleLinear(n) {
-    for (var i = 0; - < n; i++) {
+    for (var i = 0; i < n; i++) {
         console.log(i);
     }
 }
@@ -50,12 +50,12 @@ function exampleQuadratic(n) {
 ### Common Examples - O(n3) - cubic
 
 ```javascript
-function exampleQuadratic(n) {
+function exampleCubic(n) {
     for (var = i; i < n; i++ )  {
         console.log(i)
         for (var = j; j < n; j++ )  {
             console.log(j);
-            for (var k = j; j < k; j++ ) {
+            for (var k = j; j < n; j++ ) {
                 console.log(k);
             }
         }
@@ -71,7 +71,7 @@ function exampleQuadratic(n) {
 
 ```javascript
 function exmapleLogarithmic(n) {
-    for (var i = 2;p - <= n; i = i*2 ) {
+    for (var i = 2;i <= n; i = i*2 ) {
         console.log(i);
     }
 }
@@ -195,4 +195,4 @@ function a(n) {
 }
 ```
 
-- in this example f(n) = n to the power of two, because line 4 runs n*n iterations.
+- in this example f(n) = n^2, because line 4 runs n*n iterations.
