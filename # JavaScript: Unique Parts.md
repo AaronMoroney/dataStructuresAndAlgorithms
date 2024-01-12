@@ -105,11 +105,11 @@ scope3(true) //error
 
 - in this example, nothing is printed, or in my case: resolved with an error because the console.log is outside the block
 
-### Equality and Types
+## Equality and Types
 
 - javascript has different types than a traditonal programming langauge like java
 
-## variable types
+### variable types
 
 -**There are seven primitive data types:**
 
@@ -149,5 +149,90 @@ let nothing;
 typeof nothing; //undefined
 ```
 
-## truthy / falsy checks
+### truthy / falsy checks
 
+- in many languages the parameter inside the if() must be a boolean
+- because javascript is a dynamically typed langauge, so it is more flixble
+
+```javascript
+if(data) {
+    ...
+}
+```
+
+-'data', is a variable - if the variable is empty, null or undefined, it will evaluate to false. 
+
+-**commonly 'false' expressions:**
+
+1. false 
+2. 0
+3. Empty Strings ('', "")
+4. NaN
+5. undefined 
+6. null
+
+-**commonly 'true' expressions:**
+
+1. true
+2. any number other than 0
+3. non-empty strings
+4. non-empty objects
+
+``` javascript
+let printIfTrue = ";
+
+if (printIfTrue) {
+    console.log('truthy');
+} else {
+    console.log('falsey');
+} //prints 'falsey'
+```
+
+## === vs ==
+
+- JavaScript is a scripting language so variables are **NOT** assigned a type during declaration.
+- Types are interpreted as the code runs 
+- Hence === is used to check eqaulity more strictly than ==
+
+```javascript
+"5" == 5 //returns true, "5"(string) is coerced to a number before the comparison
+"5" === 5 //returns false, because "5" type string, !== 5 of type number 
+```
+
+## Objects
+
+- most strongly typed languages such as Java use isEquals() to check weather two objects are the same
+
+- you may be temped to check if two objects are equal to eachother in JS, however; this will not evaluate to true, **because they have different addresses in memory**
+
+```javascript
+let obj A = {}
+let obj B = {}
+
+A == B //returns false
+A === B //returns false
+```
+
+- most javascript apps will use https://lodash.com, or http://underscorejs.org to run a function, isEqual(a,b)
+
+- further anomolies:
+
+```javascript
+var obj1 = {'prop1': "test", 'prop2': function(){} };
+var obj2 = {'prop1': "test", 'prop2': function(){} };
+
+isEquivalent(obj1, obj2 ); //returns false
+```
+
+- this is because funcutions and arrays cannot simply use the == operator to check equality
+
+
+```javascript
+let function1 = function(){console.log(2)};
+let function2 = function(){console.log(2)};
+
+console.log(function1 = function2) //returns false
+```
+
+- different addresses in memory, == & === can only be used for strings and numbers
+- for objects, each property in the object needs to be checked.
