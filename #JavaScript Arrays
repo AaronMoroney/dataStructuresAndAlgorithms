@@ -1,0 +1,159 @@
+# JavaScript Arrays
+
+- The array si the most commonly used data structure
+
+```javascript
+let array = [1,2,3,4];
+```
+
+- For any data structure, primarily concerned with access, insertion, deletion & search
+
+## Insertion -Array Fundamentals #1 
+
+Adding a new element to the data structure
+
+-**.push**
+- the push method adds a new element to the end of the array
+
+```javascript
+let arr = [1,2,3,4,5];
+arr.push(6);
+arr.psuh(7);
+console.log(arr); // [1,2,3,4,5,6,7]
+```
+## Deletion - Array Fundamentals #2
+
+deletion using the pop method 
+
+-**.pop**
+- the pop method removes the last added element 
+- the pop method also returns the added element
+- time complexity is O(1)
+
+```javascript
+let arr = [1,2,3,4];
+arr.pop(); //returns 4, arr = [1,2,3];
+arr.pop(); //returns 43 arr = [1,2];
+```
+
+-**.shift()**
+- remove the first element & return it
+
+
+```javascript
+let arr = [1,2,3,4];
+arr.shift(); //returns 1, arr = [2,3,4];
+arr.shift(); //returns 2, arr = [3,4];
+```
+
+## Access - Array Fundamentals #3
+
+Accessing an array at a specific index onnly takes O(1)
+
+- this is becuase it is directly accessing the element directly from the address in memory
+- it does so by specifying the index
+- JavaScript is 0 indexed
+
+```javascript
+let arr = [1,2,3,4,5];
+arr[0]; // returns 1
+```
+
+## Iteration - Array Fundamentals #4
+
+- Iteration is the process of accessing each of the items comntained within a data structure
+- they all have a time complexity of O(n)
+
+-**for (variables, condition, modification)**
+
+- for is the most common iteration
+
+```javascript
+for (let i = 0; i<array.length; i++) {
+    console.log(array[i]);
+}
+```
+
+- the above ^ means initialize the variable i
+- check weather the condition is false by checking if i < array.length
+- then modify i by 1 (i++) until the condition results in false
+
+```javascript
+let fruits = ["apple", "banana", "cherry", "date"];
+let index = 0;
+
+while (index < fruits.length) {
+    console.log(fruits[index]);
+    index++;
+}
+```
+
+
+-**infinite loop**
+
+```javascript
+while(true) {
+    if (breakCondition) {
+        break;
+    }
+}
+```
+
+- similarly a for loop, can infinitely repeat by not setting a conditon
+
+```javascript
+for( ; ; ) {
+    if (breakCondition) {
+        break;
+    }
+}
+```
+-**for in**
+
+- another way to iterate in javascript is to call the indeces one by one
+- the variable specified before the in is the index of the array as follows
+
+```javascript
+var array1 = ['mtb', 'bmx', 'gravel', 'road'];
+
+for (let index in array1) {
+    console.log(array1[index]);
+} // 'mtb', 'bmx', 'gravel', 'road'
+
+for (let index in array1) {
+    console.log(index);
+} // '0', '1', '2', '3'
+```
+
+-**for of**
+
+- the variable spcified before of, is the element (the value) of the array
+
+```javascript
+var array1 = ['mtb', 'bmx', 'gravel', 'road'];
+
+for (let element of array1) {
+    console.log(element);
+} // 'mtb', 'bmx', 'gravel', 'road'
+```
+
+-**forEach**
+
+- executes provided function once for each element in an array
+- cannot break out of a loop, more expressive & explicit
+
+```javascript
+var array1 = ['mtb', 'bmx', 'gravel', 'road'];
+
+array1.forEach(function(element,index) {
+    console.log(element);
+}); // 'mtb', 'bmx', 'gravel', 'road'
+
+array1.forEach(function(element,index) {
+    console.log(array1[index]);
+}); // 'mtb', 'bmx', 'gravel', 'road'
+```
+
+
+
+
