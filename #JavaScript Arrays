@@ -209,3 +209,25 @@ let array2 = Array.from(array1);
 - Array.from();  takes O(n), where n is the size of the array, this is intuitive, copying the array takes copying all n elements of the array.
 
 ### splice(begin, size, element1, element2...)
+
+- this helper function returns and changes the contents of an array by removing existing elements and/or adding new elements
+- .splice(beginningIndex, SizeOfIndex, newElementsToAdd, newElementsToAdd, ... );
+- it returns the removed elements
+
+```javascript
+let array1 = [1,2,3,4];
+array1.splice(); //returns []; array1 = [1,2,3,4];
+array1.splice(1,2); //returns [2,3], array1 = [1,4];
+```
+- this example ^ demonstrates removal. [2,3], was return becuase it selected 2 items starting from an index of 1
+
+```javascript
+let array1 = [1,2,3,4];
+array1.splice(1,2, [5,6,7]) //returns [2,3], array1 = [1,  [567], 4]
+array1.splice(1,2, {'ss': 1}); //returns [2,3], array1 = [1, {'ss':1}, 4]
+```
+
+- ^ anything object type can be added to can be added to the array, this is the beauty (and odd part of javascript)
+- splice() is, worst case O(n), similarly to copying, if the range specified is the whole array, each n item has to be removed.
+
+
