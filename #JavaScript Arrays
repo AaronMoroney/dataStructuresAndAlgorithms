@@ -230,4 +230,16 @@ array1.splice(1,2, {'ss': 1}); //returns [2,3], array1 = [1, {'ss':1}, 4]
 - ^ anything object type can be added to can be added to the array, this is the beauty (and odd part of javascript)
 - splice() is, worst case O(n), similarly to copying, if the range specified is the whole array, each n item has to be removed.
 
+## .concat();
 
+- this adds new elements to the array, at the end of the array, and returns THE array
+
+```javascript
+var array1 = [1,2,3,4];
+array1.concat(); //returns [1,2,3,4], array1 = [1,2,3,4]
+array1.concat([2,3,4]); //returns [1,2,3,4, 2, 3, 4], array1 = [1,2,3,4]; 
+
+var result = array1.concat([2, 3, 4]);
+console.log(result); // Outputs: [1, 2, 3, 4, 2, 3, 4]
+console.log(array1);   // Outputs: [1, 2, 3, 4], showing that array1 is unchanged
+```
