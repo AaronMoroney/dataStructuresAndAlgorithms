@@ -243,3 +243,31 @@ var result = array1.concat([2, 3, 4]);
 console.log(result); // Outputs: [1, 2, 3, 4, 2, 3, 4]
 console.log(array1);   // Outputs: [1, 2, 3, 4], showing that array1 is unchanged
 ```
+
+## .length();
+
+- the length property returns the size of the array
+- changing to a lower size can delete elements from the array
+
+```javascript
+var array1 = [1,2,3,4];
+console.log(array.length) //prints 4
+array.length = 3; //array1 = [1,2,3];
+```
+## Spread Operator (...)
+
+
+-The spread operator in JavaScript is a powerful feature that allows you to expand elements of an iterable (like an array) 
+- into individual elements where multiple arguments (or elements) are expected
+
+```javascript
+function addFourNums(a,b,c,d) {
+    return a + b + c + d;
+}
+var numbers = [1,2,3,4];
+console.log(addFourNums(...numbers)) //10, because 1 + 2 + 3 + 4 = 10;
+```
+
+- To do, map,  filter, reduce
+
+
