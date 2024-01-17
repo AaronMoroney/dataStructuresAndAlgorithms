@@ -1,0 +1,29 @@
+# any keyword
+
+- in a situation where we declare a variable, and assign it to no value, the programme will infer it with an `any`  type automatically
+- this can lead to significant bugs
+- any is not a specific type, any basically turns off the typescript
+
+```typescript
+let hero; //automatically inferred with 'any'
+
+function getHero() {
+    return true
+}
+
+hero = getHero(); 
+//this would break the consistancy of the code
+
+let tutor: string; //explicitly inferred with type 'string'
+
+function getTutor() {
+    //return 'timur' //works
+    return 5 //breaks the code
+}
+
+tutor = getTutor(); 
+//type 'number' is not assignable to type 'string'
+```
+- noImplicitAny, can be added in the TS.config file that will allow us to not fall into this trap.
+
+
