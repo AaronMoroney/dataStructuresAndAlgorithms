@@ -1,0 +1,92 @@
+# Typescript Intro
+
+Rewrite Axxon Code Test in TypeScript?
+
+- TypeScript is a superset of TypeScript
+- Not adding more features, just adding a more precious way of writing javascript
+
+**javascript quirks**
+
+```javascript
+2 + '2' = 22 //adding a string and a number, shouldn't be allowed, missing type safety
+2 + null = 2
+undefined + 2 = NaN
+```
+- TS is about Type safety
+
+## Video 2 - What TypeScript is? what TypeScript is not?
+
+**IT DOES**
+
+- static checking, (most languages etc. are constantly being analyzed by the IDE)
+- analyze the code as we type
+- write a lot more TS code, than JS code
+- write all code in TS, 'converted' into JS. 
+- TS is a 'development tool', that'll help you write better JS code
+
+```typescript
+let user = { name: 'aaron', age: 29 };
+let email = user.email; //produces a TS error
+
+let no1 = 3
+let no2 = '3'
+
+let sum = no1 + no2; //this is allowed in TS
+console.log(sum);
+```
+- based off the ^ , it is clear that TS is not a new language as it is Dev tool, too dependant on JS
+
+## Video 3 - Installatiion
+
+- done
+
+- the ts file alone cannot execute things by itself
+- type tsc and file name in terminal, and it will create an intro.js version of the file and execute
+- this will run the code, and check for errors. 
+- it will not print the console.logs
+- ts config files exist on larger apps
+
+## Video 4 - Intro
+
+- Learn from docs
+
+https://www.typescriptlang.org/docs/handbook/type-compatibility.html#:~:text=In%20TypeScript%2C%20there%20are%20two,enum%20with%20corresponding%20numeric%20values.
+
+**types**
+
+- number
+- string 
+- boolean
+- null
+- undefined
+- void
+- object
+- array
+- tuples
+- never
+- unknown
+- any
+
+https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
+
+**situations - what situation does typescripot serve best?**
+
+- what dats is about to be processed, or come from any resource
+
+e.g a function that accepts 2 numbers
+
+- We don't need to explicitly check if a number is present before we perform operations
+
+e.g a function returns a string
+
+- you are absolutely sure what is coming out 
+
+**syntax
+
+```typescript
+let variableName: type = value;
+```
+
+
+
+

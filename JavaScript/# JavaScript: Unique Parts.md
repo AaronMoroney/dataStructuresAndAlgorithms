@@ -236,3 +236,4 @@ console.log(function1 = function2) //returns false
 
 - different addresses in memory, == & === can only be used for strings and numbers
 - for objects, each property in the object needs to be checked.
+

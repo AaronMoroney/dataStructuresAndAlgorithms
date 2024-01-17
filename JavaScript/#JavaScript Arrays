@@ -269,5 +269,10 @@ console.log(addFourNums(...numbers)) //10, because 1 + 2 + 3 + 4 = 10;
 ```
 
 - To do, map,  filter, reduce
-
+- JavaScript classes
+- Imperitive, Declaritive, OOP
+- this statements
+- differetn FNS.
+- promises
+- anonymous FNS.
 
