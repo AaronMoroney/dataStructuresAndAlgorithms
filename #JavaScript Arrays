@@ -8,7 +8,7 @@ let array = [1,2,3,4];
 
 - For any data structure, primarily concerned with access, insertion, deletion & search
 
-## Insertion -Array Fundamentals #1 
+## Insertion - Array Fundamentals #1 
 
 Adding a new element to the data structure
 
@@ -154,6 +154,58 @@ array1.forEach(function(element,index) {
 }); // 'mtb', 'bmx', 'gravel', 'road'
 ```
 
+## Helper Functions
 
+- commonly used helper functions
 
+### slice(begin, end)
 
+- this helper function returns a portion of an exisiting array **w/o modifying** the exisiting array
+- slice(beginning index, ending index)
+
+```javascript
+var array1 = [1,2,3,4];
+array1.slice(1,2); //returns [2], array1 = [1,2,3,4];
+array1.slice(2,4); //returns [3,4], array1 = [1,2,3,4];
+```
+
+- if only the beginning index is passed, the ending will assumed to be the max. index of the array
+
+```javascript
+var array1 = [1,2,3,4];
+array1.slice(1); //returns [2, 3, 4], array1 = [1,2,3,4];
+array1.slice(1,4); //returns [2, 3,4], array1 = [1,2,3,4];
+```
+
+- if nothing is passed this function simply returns a copy of the array
+- array1.slice() === array1 evaluates to false
+- the memory addresses at which those arrays reside are different
+
+**arrays in javascript are reference based**
+
+- if you assign a new variable to an array, changes to the variable apply to the original array
+
+```javascript
+let array1 = [1,2,3,4];
+let array2 = array1;
+
+console.log(array1);
+console.log(array2);
+
+array2[0] = 5;
+
+console.log(array1); // [5,2,3,4]
+console.log(array2); // [5,2,3,4]
+
+//this can be used to create a seperate copy of array1
+let array2 = array1.slice(); 
+//or using the spread operator
+let array2 = [...array1];
+//or using Array.from():
+let array2 = Array.from(array1);
+```
+
+- the book recommends array.from();
+- Array.from();  takes O(n), where n is the size of the array, this is intuitive, copying the array takes copying all n elements of the array.
+
+### splice(begin, size, element1, element2...)
