@@ -11,8 +11,6 @@ console.log(myNum);
 let userId: number = 1234321.3
 
 //video 3 - boolean
-
 let isLoggedIn: boolean = true;
-
 
 export {} 
