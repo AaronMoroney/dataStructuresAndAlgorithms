@@ -1,0 +1,24 @@
+# TypeScript Alias
+
+```typescript
+type user = {
+    name: string,
+    email: string,
+    isActive: boolean
+}
+```
+- why would you rename?
+
+```typescript
+type myString = string; //this is technically allowed..
+```
+
+- the advantage of creating a type, is the we can pass this on to the methods we use
+- all our methiods should adhere to the same type
+
+```typescript
+function createUser(user: User): User { //: User is the return type
+    return {name: "", email: "", isActive: true};
+}
+```
+

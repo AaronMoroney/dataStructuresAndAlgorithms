@@ -34,7 +34,6 @@ function createUser({name: string, isPaid: boolean}) {
 
 let newUser = {name: 'Hayes', isPaid: false, email:'h@h.com'};
 createUser(newUser); 
-
 ```
 
 
