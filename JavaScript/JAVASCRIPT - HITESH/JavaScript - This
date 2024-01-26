@@ -1,0 +1,5 @@
+# JavaScript - This Keyword - Introduction
+
+- this keyword is a reference to the current global context
+- if we run it in mode, it will be an empty scope, {}
+- of we run it in a browser, it will be the window object

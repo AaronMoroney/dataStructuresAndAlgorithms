@@ -1,0 +1,29 @@
+# JavaScript - Context
+
+- why does the following code work?
+
+``` javascript
+sayHello();
+
+function sayHello() {
+    console.log("Hello");
+}
+```
+
+``` javascript
+if (2 === "2") {
+    console.log("This is true");
+}
+var myName = "Hitesh";
+if (myName === window.myName) {
+    console.log("This is again a true statement"); //this will throw an error in a node environment
+}
+if (myName === window.myName) {
+    console.log("This is again a true statement"); //but this will run in a browser
+}
+```
+
+- There is always a global context in JavaScript
+- In a browser, the global context is the window object
+- the context registers all the functions and variables that are defined in it
+- they are wrapped up and put into the global context
