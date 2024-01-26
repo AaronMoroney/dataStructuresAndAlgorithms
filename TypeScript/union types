@@ -1,0 +1,76 @@
+# Union Types
+
+```typescript
+let score: number = 33;
+let score: number | string | boolean = 33; //union type
+
+score = "33"; //allowed
+score =  false; //allowed
+```
+
+- We can define a union type, which is a type that can be one of many types
+
+
+```typescript
+type User = {
+    name: string;
+    id: number;
+}
+type Admin = {
+    userName: string;
+    id: number;
+}
+//composed of these two types
+let Aaron: User | Admin = {name: 'hitesh', id: 0};
+
+//redefine
+Aaron = {username: 'aaron', id: 0}; //allowed
+```
+
+- sometimes function accepts multiple values, returns multiple values
+
+```typescript
+function getDbId(id: number | string) {
+    //make API calls
+    console.log(` DB is ${id}`); //valid
+}
+
+getDbId(1); //accepts number
+getDbId('1'); //accepts string
+```
+- Union narrowing
+
+```typescript
+function getDbId(id: number | string) {
+    //this could end up as a number, or a string
+    id.toUpperCase(); //throws an error, invalid
+
+    if(typeof id === 'string') { //defined the condition
+        id.toUpperCase(); //valid
+    } else {
+        id ++; //valid
+    }
+}
+```
+
+- union of arrays
+
+```typescript
+const data: number[] = [1,2,3,"4"]; //throws an error
+
+const dataBoth: string[] | number[] = [1,2,3,"4"]; //throws an error, can either be all numbers or all strings
+const dataBoth: (string| number)[] = [1,2,3,"4"]; //now accepts both
+
+let pi: 3.14 = 3.14; //should only be this type!
+pi = 3.145; //throws an error
+
+let seatAllotment = 'aisle' | 'window' | 'middle'; //union type
+seatAllotment = 'crew' //throws an error
+```
+
+- not just about making all the errors go away, about making your code MORE strict, to write better code.
+
+
+
+
+
