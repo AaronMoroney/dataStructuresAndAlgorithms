@@ -1,0 +1,29 @@
+# TypeScript Tuples
+
+- type of specilised array, restricts the order of the data
+
+```typescript
+
+// const user: (string | number)[] = [ 1, "john"]; 
+let user: [string, number, boolean];
+
+user=['HC', 1, true] //valid
+user=[1,'HC', true] // not valid, order matters
+
+let rgb = [number, number, number] = [255, 255, 255]; //valid
+let rgb = [number, number, number] = [255, 255, 255, 0.5]; //opacity is not valid here, we defined 3 values
+
+
+type User [number, string];
+const newUser: User = [1, 'HC']; //valid, respects the order
+```
+
+- Errors in tuples, overriding
+
+```typescript
+type User [number, string];
+const newUser: User = [1, 'HC']; //valid, respects the order
+newUser[0] = 'HC'; //can override in some cases
+newUser.push(true); //can push in some cases
+```
+
