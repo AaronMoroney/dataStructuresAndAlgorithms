@@ -1,0 +1,83 @@
+# JavaScript - Functions in Variables
+
+Define a function that can answer the role of a user.
+
+A user can be on following roles:
+admin - with all access
+subadmin - with access to create/delete courses
+testprep - with access to create/delete tests
+user - consume all content
+other - trial user
+
+```javascript
+
+function getUserRole(name, role) {
+    switch (role) {
+        case "admin":
+            return `${name} is admin with all access`;
+            break; //break is not necessary here
+        case "subadmin":
+            return `${name} is subadmin with access to create/delete courses`;
+            break;
+        case "testprep":
+            return `${name} is testprep with access to create/delete tests`;
+            break;
+        case "user":
+            return `${name} is user to consume all content`;
+            break;
+        default:
+            return `${name} is a trial user`;
+        break;
+    }
+}
+
+getUser("Hitesh", "admin"); //doesnt print anything
+let getRole = getUserRole("Hitesh", "admin"); //Hitesh is admin with all access
+
+let getRole = getUserRole("Hitesh", "testprep"); //Hitesh is testprep with access to create/delete tests
+console.log(getRole);
+```
+- We can declare a variable, and assign a function to it.
+
+```javascript
+let getUserRole = function(name, role) {
+    switch (role) {
+        case "admin":
+            return `${name} is admin with all access`;
+            break; //break is not necessary here
+        case "subadmin":
+            return `${name} is subadmin with access to create/delete courses`;
+            break;
+        case "testprep":
+            return `${name} is testprep with access to create/delete tests`;
+            break;
+        case "user":
+            return `${name} is user to consume all content`;
+            break;
+        default:
+            return `${name} is a trial user`;
+        break;
+    }
+}
+
+let getUserRole = (name, role) => {
+    switch (role) {
+        case "admin":
+            return `${name} is admin with all access`;
+            break; //break is not necessary here
+        case "subadmin":
+            return `${name} is subadmin with access to create/delete courses`;
+            break;
+        case "testprep":
+            return `${name} is testprep with access to create/delete tests`;
+            break;
+        case "user":
+            return `${name} is user to consume all content`;
+            break;
+        default:
+            return `${name} is a trial user`;
+        break;
+    }
+}
+
+```
