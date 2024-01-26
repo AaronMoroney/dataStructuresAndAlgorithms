@@ -1,0 +1,41 @@
+# TypeScript Arrays
+
+```TypeScript
+const superHeroes = []; //of type never
+const superHeroes = ["superman", "batman", "flash"]; //not assingable to type never
+
+const superHeroes: string[] = []; //of type string
+const superHeroes = ["superman", "batman", "flash"]; //assignable
+
+const superHeroesPower: number[] = [];
+const superHeroesPower.push(1); //valid
+
+const superHeroesPower: Array<number> = []; //syntax for array of numbers
+
+type User = {
+    name: string;
+    isActiveL boolean;
+}
+
+const allUSers: User[] = []; //expects the above type
+
+allUsers.push("") //throws an error
+allUsers.push({}) //throws an error
+
+allUsers.push({
+    name: "john",
+    isActive: true
+});
+```
+
+- ^ above, we can define the type of the array, and the type of the array's contents
+- lets say we are using ML models
+
+```typescript
+const MLModels: number[][] = [ //expecting an array of arrays of numbers
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+```
+
