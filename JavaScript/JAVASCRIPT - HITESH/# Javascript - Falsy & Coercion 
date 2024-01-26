@@ -1,0 +1,38 @@
+# JavaScript - Coercion and falsy values 
+
+## Falsy values
+
+```javascript
+undefined // variable without value
+null //empty
+0    //zero
+NaN //not a number
+"
+```
+
+```javascript
+var user = "null";
+var user = null;
+
+if (user) { //if user is not null, then it is true
+    console.log("condition is true");
+}
+```
+*Any other values === truthy values*
+
+## Coercion
+
+```javascript
+let user = "2";
+
+console.log("2" + 2); //22, javascript doesnt know how to add a string and a number
+console.log(2 + 2); //4
+console.log(2 - "2"); //0, javascript knows how to subtract a string from a number
+
+if (2 = user) { //loosly equal to two, so the code will actually run 
+    console.log("condition is true");
+}
+if (2 === user) { //strictly equal to two, so the code will actually run 
+    console.log("condition is true");
+}
+```

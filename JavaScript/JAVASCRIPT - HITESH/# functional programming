@@ -1,0 +1,25 @@
+# JavaScript - functional programming
+
+##functions are a block of code that can be reused
+
+```javascript
+function sayHello() {
+    console.log("Hello");
+}
+
+sayHello(); //calling the function
+
+function sayHelloFN(name) {
+    console.log(name);
+}
+
+sayHelloFN(name); //undefined
+sayHelloFN('sammy'); //sammy
+
+function namestey() {
+    return "how to say, Hello in India";
+}
+
+namstey(); //prints nothing
+let greetings = namestey(); //hold the value of the function
+```
