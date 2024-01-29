@@ -24,17 +24,18 @@
 
 ## Redux Basics
 
-   1.**STORE** The center of any redux application is the store. The store is the container where your application state is held.
-
+   1.**STORE** The center of any redux application is the store. The store is the container where your application state is held:
    -**you must never directly modify or change the state that is inside the store**
 
    2. **ACTION (to change state)**, you must dispatch a plain *action* to the store:
    - the action describes that something just happened in the application
    - you dispatch an action to the store to tell it what just happened
 
-   3. **REDUCER - calculate the change** When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
+   3. **REDUCER - calculate the change**:
+   -When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
 
-   4. **SUBSCRIBERS** Finally, the store notifies subscribers that the state has been updated so the UI can be updated with the new data.
+   4. **SUBSCRIBERS**:
+   - Finally, the store notifies subscribers that the state has been updated so the UI can be updated with the new data.
 
 ## Example - State, Actions and Reducers
 
