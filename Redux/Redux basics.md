@@ -25,7 +25,7 @@
 ## Redux Basics
 
    1.**STORE** The center of any redux application is the store. The store is the container where your application state is held:
-   -**you must never directly modify or change the state that is inside the store**
+   - **you must never directly modify or change the state that is inside the store**
 
    2. **ACTION (to change state)**, you must dispatch a plain *action* to the store:
    - the action describes that something just happened in the application
