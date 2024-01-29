@@ -24,7 +24,7 @@
 
 ## Redux Basics
 
-    1. **STORE** The center of any redux application is the store. The store is the container where your application state is held.
+   1.**STORE** The center of any redux application is the store. The store is the container where your application state is held.
 
    -**you must never directly modify or change the state that is inside the store**
 
