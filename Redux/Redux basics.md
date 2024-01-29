@@ -24,117 +24,172 @@
 
 ## Redux Basics
 
-   1.**STORE** The center of any redux application is the store. The store is the container where your application state is held:
-   - **you must never directly modify or change the state that is inside the store**
+  1.**STORE** The center of any redux application is the store. The store is the container where your application state is held:
+  - **you must never directly modify or change the state that is inside the store**
 
-   2. **ACTION (to change state)**, you must dispatch a plain *action* to the store:
-   - the action describes that something just happened in the application
-   - you dispatch an action to the store to tell it what just happened
+  2. **ACTION (to change state)**, you must dispatch a plain *action* to the store:
+  - the action describes that something just happened in the application
+  - you dispatch an action to the store to tell it what just happened
 
-   3. **REDUCER - calculate the change**:
-   - When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
+  3. **REDUCER - calculate the change**:
+  - When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
 
-   4. **SUBSCRIBERS**:
-   - Finally, the store notifies subscribers that the state has been updated so the UI can be updated with the new data.
+  4. **SUBSCRIBERS**:
+  - Finally, the store notifies subscribers that the state has been updated so the UI can be updated with the new data.
 
-## Example
+## Redux Application Documentation
 
-This example demonstrates how to manage state, actions, and reducers in a React TypeScript Redux app for a simple counter.
+This documentation provides an overview and explanation of a basic Redux application.
 
-- 1. Defining the Initial State
+## Code Structure
 
-```javascript
+### `App.js`
 
-// Define an initial state value for the app
-const initialState = {
-  value: 0
-}
-```
-In this step, we set up the initial state of the application, starting with a counter value of 0.
+```jsx
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { incrementCounter, decrementCounter } from './redux/actions/userActions';
+import './App.css';
+import { RootState } from './redux/reducers';
 
-- 2. Defining the Reducer Function
-```javascript
+function App() {
+  // Use useDispatch to dispatch actions
+  const dispatch = useDispatch();
 
-function counterReducer(state = initialState, action) {
-  // Reducers usually look at the type of action that happened
-  // to decide how to update the state
-  switch (action.type) {
-    case 'counter/incremented':
-      return { ...state, value: state.value + 1 }
-    case 'counter/decremented':
-      return { ...state, value: state.value - 1 }
-    default:
-      // If the reducer doesn't care about this action type,
-      // return the existing state unchanged
-      return state
-  }
-}
-```
-In this step, we define a reducer function named counterReducer. Reducers are responsible for updating the state based on the actions dispatched. The reducer checks the action type and performs the corresponding state update.
+  // Use useSelector to get the count from Redux state
+  const count = useSelector((state: RootState) => state.counter.count);
 
-- 3. Creating a Redux Store
-```javascript
-
-// Create a new Redux store with the `createStore` function,
-// and use the `counterReducer` for the update logic
-const store = Redux.createStore(counterReducer)
-```
-Here, we create a Redux store using the createStore function and provide our counterReducer to handle state updates. The store manages the application's state.
-
-- 4. UI Rendering and Subscription
-```javascript
-
-// Our "user interface" is some text in a single HTML element
-const valueEl = document.getElementById('value')
-
-// Whenever the store state changes, update the UI by
-// reading the latest store state and showing new data
-function render() {
-  const state = store.getState()
-  valueEl.innerHTML = state.value.toString()
+  return (
+    <>
+      <div className="card">
+        <button onClick={() => dispatch(incrementCounter())}>
+          Increment
+        </button>
+        <button onClick={() => dispatch(decrementCounter())}>
+          Decrement
+        </button>
+        <p>Count is {count}</p>
+      </div>
+    </>
+  );
 }
 
-// Update the UI with the initial data
-render()
-// And subscribe to redraw whenever the data changes in the future
-store.subscribe(render)
+export default App;
 ```
 
-This section handles the user interface (UI). We have an HTML element (valueEl) that displays the current counter value. The render function is responsible for updating the UI based on the latest state from the Redux store. We initially call render to display the initial state, and then we subscribe to the store to automatically update the UI whenever the state changes.
+- App.js is the main component of the application.
+- It uses the useDispatch and useSelector hooks from React Redux to interact with the Redux store.
+- It renders buttons for incrementing and decrementing the count, and displays the current count.
 
-5. Dispatching Actions
+- userActions.ts
+
 ```javascript
+// Action Types
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
-// Handle user inputs by "dispatching" action objects,
-// which should describe "what happened" in the app
-document.getElementById('increment').addEventListener('click', function () {
-  store.dispatch({ type: 'counter/incremented' })
-})
+// Action Creators
+export const incrementCounter = () => {
+    return {
+        type: INCREMENT_COUNTER
+    };
+};
 
-document.getElementById('decrement').addEventListener('click', function () {
-  store.dispatch({ type: 'counter/decremented' })
-})
+export const decrementCounter = () => {
+    return {
+        type: DECREMENT_COUNTER
+    };
+};
+```
 
-document
-  .getElementById('incrementIfOdd')
-  .addEventListener('click', function () {
-    // We can write logic to decide what to do based on the state
-    if (store.getState().value % 2 !== 0) {
-      store.dispatch({ type: 'counter/incremented' })
+- userActions.ts defines action types and action creators for incrementing and decrementing the counter.
+
+
+- CounterReducer.ts
+
+```javascript
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/userActions';
+
+// Define Action Types
+type IncrementAction = {
+    type: typeof INCREMENT_COUNTER;
+};
+
+type DecrementAction = {
+    type: typeof DECREMENT_COUNTER;
+};
+
+// Union Action Type
+type CounterActionTypes = IncrementAction | DecrementAction;
+
+// This interface defines the shape of the state managed by this reducer.
+interface CounterState {
+    count: number;
+}
+
+// Initial state of the counter
+const initialState: CounterState = {
+    count: 0
+};
+
+// Counter reducer function with TypeScript annotations
+const counterReducer = (state = initialState, action: CounterActionTypes): CounterState => {
+    switch (action.type) {
+        case INCREMENT_COUNTER:
+            return { ...state, count: state.count + 1 };
+        case DECREMENT_COUNTER:
+            return { ...state, count: state.count - 1 };
+        default:
+            return state;
     }
-  })
+};
 
-document
-  .getElementById('incrementAsync')
-  .addEventListener('click', function () {
-    // We can also write async logic that interacts with the store
-    setTimeout(function () {
-      store.dispatch({ type: 'counter/incremented' })
-    }, 1000)
-  })
+export default counterReducer;
 ```
 
-In this final section, we handle user interactions by dispatching action objects. Click events trigger actions such as incrementing or decrementing the counter. Additionally, we demonstrate how to conditionally dispatch actions based on the current state (incrementIfOdd) and dispatch actions asynchronously (incrementAsync) using a setTimeout.
+- counterReducer.ts defines the reducer function responsible for handling actions related to the counter.
+- It defines the initial state and handles actions to increment and decrement the count.
+
+```javascript
+import { combineReducers } from 'redux';
+import counterReducer from './counterReducer';
+
+// The root reducer's state type
+export interface RootState {
+    counter: ReturnType<typeof counterReducer>;
+    // Other state types would go here
+}
+
+// Combine reducers
+const rootReducer = combineReducers({
+    counter: counterReducer
+    // other reducers would be added here
+});
+
+export default rootReducer;
+```
+
+- index.ts combines all the reducers into the root reducer.
+- It defines the RootState interface to represent the overall shape of the Redux store.
+
+```javascript
+import { createStore, Store } from 'redux';
+import rootReducer, { RootState } from './reducers';
+
+// Configure the store
+const configureStore = (): Store<RootState> => {
+    const store = createStore(
+        rootReducer,
+    );
+
+    return store;
+};
+
+export default configureStore();
+```
+
+- store.ts configures and exports the Redux store using the root reducer and the RootState interface.
+
 
 ## DataFlow
 
