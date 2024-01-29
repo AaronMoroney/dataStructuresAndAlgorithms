@@ -32,7 +32,7 @@
    - you dispatch an action to the store to tell it what just happened
 
    3. **REDUCER - calculate the change**:
-   -When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
+   - When an action is dispatched, the store runs the root reducer function, and lets it calculate the new state based on the old state and the action
 
    4. **SUBSCRIBERS**:
    - Finally, the store notifies subscribers that the state has been updated so the UI can be updated with the new data.
