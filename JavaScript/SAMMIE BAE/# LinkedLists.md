@@ -32,7 +32,7 @@ function singlyLinkedListNode(data) {
 - the start of the linked list is referred to as the head, the property defaults to null before insertion.
 
 ```javascript
-function SinglyLinkedListNode() {
+function SinglyLinkedList() {
     this.head = null;
     this.size = 0;
 }
