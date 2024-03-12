@@ -80,7 +80,7 @@ point to that node's  (node 3 - to be deleted) own next node instead (pointing t
 
 - **node 2 points to nodes 3's next pointer**
 
-![singly linked list delete ](ssl-delete.png)
+![singly linked list delete ](sll-delete.png)
 
 - if the node is at the end of the linked list, then the second to last element can dereference the node, 
 by setting it's next to null
