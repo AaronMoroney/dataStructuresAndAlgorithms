@@ -32,7 +32,7 @@ function singlyLinkedListNode(data) {
 - the start of the linked list is referred to as the head, the property defaults to null before insertion.
 
 ```javascript
-function singlyLinkedListNode() {
+function SinglyLinkedListNode() {
     this.head = null;
     this.size = 0;
 }
@@ -54,12 +54,9 @@ SinglyLinkedList.prototype.insert = function(value) {
         this.head = new SinglyLinkedListNode(value); //creates a new node w/ value
     } else {
         // head of list stored in temp, preserves the link to the rest of the list
-        var temporaryValue = this.head; 
-        // new node is created with value, new node assigned as new head of the list.
-        this.head = new SinglyLinkedListNode(value); 
-        // the next pointer of the new head node is set to point to the old head node (now stored in temp). 
-        // this inserts the new node at the beginning of the list
-        this.head.next = temporaryValue; 
+        var temporaryNode = this.head;  // new node is created with value, new node assigned as new head of the list.
+        this.head = new SinglyLinkedListNode(value); // the next pointer of the new head node is set to point to the old head node (now stored in temp). 
+        this.head.next = temporaryNode; 
     }
     //increments the size property of the list, keeping track of the total number of nodes.
     this.size++;
