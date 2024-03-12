@@ -2,7 +2,6 @@
 
 - a linked List is a data structure in which each node points to the another node
 - Unlike arrays, whcih have a fixed size, a linked list is a dynamic structure and can re-allocate, de-allocate memory at run time 
-- 
 
 # Single linked list
 
